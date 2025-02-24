@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My E-Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<nav id="navbar">
+    <h1>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+    </h1>
+    <button id="navbar-toggle" onclick="toggleNavbar()" aria-label="Toggle Navigation">
+        ☰
+    </button>
+    <ul id="navbar-menu">
+        <li><a href="index.html">About me</a></li>
+        <li><a href="blogi.html">Blog</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="current">Contact</a></li>
+    </ul>
+</nav>
+<script>
+    function copyEmail() {
+        const email = "fredy-andri.mottus@voco.ee";
+        navigator.clipboard.writeText(email).then(() => {
+            const confirmation = document.getElementById("copy-confirmation");
+            confirmation.style.opacity = "1"; // Show confirmation text
+            setTimeout(() => {
+                confirmation.style.opacity = "0"; // Hide after 2 seconds
+            }, 2000);
+        }).catch(err => console.error("Failed to copy email:", err));
+    }
+</script>
+<body class="contact-page">
+    <object data="img/CV.Fredy-Andri.Mottus.pdf" type="application/pdf" width="100%" height="600px">
+        <p>Your browser does not support PDFs. <a href="img/CV.Fredy-Andri.Mottus.pdf">Download the PDF</a>.</p>
+      </object>
+      
+
+  <div class="contact-buttons-container">
+    <div class="copy-email-container">
+      <button class="copy-email-btn" onclick="copyEmail()" aria-label="Copy Email">
+          <img src="img/gmail.png" alt="Gmail Icon">
+      </button>
+      <span id="copy-confirmation">Copied!</span>
+    </div>
+    <div class="linkedin-container">
+      <a href="https://www.linkedin.com/in/fredy-andri-m%C3%B5ttus-36a990255/" target="_blank">
+          <img src="img/linked.png" alt="LinkedIn" class="linkedin-btn">
+      </a>
+    </div>
+  </div>
+  <script>
+      function toggleNavbar() {
+          const navbarMenu = document.getElementById('navbar-menu');
+          navbarMenu.classList.toggle('show');
+      }
+  </script>
+</body>
+</html>

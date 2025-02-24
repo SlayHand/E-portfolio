@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My E-Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="about-page">
+
+<nav id="navbar">
+    <h1>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+    </h1>
+    <button id="navbar-toggle" onclick="toggleNavbar()" aria-label="Toggle Navigation">
+        ☰
+    </button>
+    <ul id="navbar-menu">
+        <li><a href="index.html" class="current">About me</a></li>
+        <li><a href="blogi.html">Blog</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Jumbotron Container -->
+<div class="jumbotron-container">
+  <!-- Jumbotron Text -->
+  <div class="jumbotron text-center">
+      <!-- Reduced font-size for welcome message -->
+      <h1 style="font-size: 2em;">Welcome to my E-portfolio!</h1>
+      <p>Explore my projects, experience, and passion for development.</p>
+  </div>
+</div>
+
+<!-- Profile Section -->
+<div class="container">
+  <div class="row profile-container">
+    <!-- Image Column -->
+    <div class="col-sm-6 text-center">
+      <img src="img/fredy.JPG" class="img-circle profile-img" alt="Fredy Image 1" width="300" height="300">
+    </div>
+    
+    <!-- Text Column -->
+    <div class="col-sm-6 profile-text">
+      <div class="about-text-container">
+        <h2>About Me</h2>
+        <p>Hello! My name is Fredy! I enjoy playing games, the guitar, and singing. I'm currently studying at Tartu Vocational College as a junior web developer, and I aspire to be a game developer.</p>
+        <p>From a very early age, I have always felt a very strong pull towards gaming. I've always wanted to make a game myself or work in a team of game developers because, for me, games are one of the highest forms of self-expression and, therefore, art.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="my-skills">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="skills-container">
+        <h2>My Skills</h2>
+        <div class="skills-list text-center">
+          <div class="skill-item">
+            <p>HTML/CSS</p>
+          </div>
+          <div class="skill-item">
+            <p>Node</p>
+          </div>
+          <div class="skill-item">
+            <p>Java</p>
+          </div>
+          <div class="skill-item">
+            <p>Express</p>
+          </div>
+          <div class="skill-item">
+            <p>WordPress</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+    function toggleNavbar() {
+        const navbarMenu = document.getElementById('navbar-menu');
+        navbarMenu.classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>

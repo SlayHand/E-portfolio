@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My E-Portfolio - Blog</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<nav id="navbar">
+    <h1>
+        <a href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+    </h1>
+    <button id="navbar-toggle" onclick="toggleNavbar()" aria-label="Toggle Navigation">
+        ☰
+    </button>
+    <ul id="navbar-menu">
+        <li><a href="index.html">About me</a></li>
+        <li><a href="blogi.html" class="current">Blog</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+<body class="blog-page">
+  <div class="container">
+      <div class="row profile-container">
+        <!-- Image Column -->
+        <div class="col-sm-6 text-center">
+            <img src="img/minifredy.jpg" class="img-circle profile-img" alt="Fredy Image 2" width="400" height="400">
+            <div class="jumbotron-gif" style="margin-top: 20px;">
+                <img id="monster" src="img/idle.gif" alt="Monster" onclick="killMonster()">
+            </div>
+        </div>
+        
+        <!-- Text Column -->
+        <div class="col-sm-6 profile-text">
+          <div class="about-text-container">
+            <h2>More About Me</h2>
+            
+            <p>My first experience with "backend" of games was when I was about 11 and an idea came to me whilst playing an old Indiana Jones game. While I was picking up ammo, a thought occurred: "What if instead of picking up 5 ammo, I could pick up 100 ammo from the boxes?" After some thought, another idea came: "What if I don't even need to pick up ammo—what if I have 10,000 bullets?"</p>
+    
+            <p>By that age, I had already mastered the art of cracking a game, and I had a feeling that whatever numbers I saw on my screen for things in-game, there had to be a place where I could enter my own numbers and manipulate the game without playing it. With newfound determination, I located the game files and modified the parameters. I booted up the game, and to my joy, everything worked just as I had envisioned it.</p>
+    
+            <p>As I got older, I developed an interest not just in gaming itself but in how games work: how AI functions, how different interactions affect the player in a story game, and how to "break" games by finding loopholes or developer oversights. That's how I knew what my passion in life was.</p>
+
+            <p>I wanted to pay a little homage to Doom 1, since it was the first computer game i ever played by adding an interactable gif of it no matter how much effort it took and I'd say that it came out pretty well. How i did it is described below.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- New Full-Width Text Box -->
+  <div class="container" id="additional-text">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="about-text-container" style="margin-top: 20px;">
+          <p>The gif you see above this text is clickable, the way i got the gif was i downloaded thy original doom 1, downloaded a software that doom modders use to change sprites etc. , accessed the DOOM.WAD file and searched individual frames from the massive catalogue of all the sprites in the game, downloaded them one by one and compiled them together to create the 3 different gifs. The research how to do it and the whole process took me about 3 hours, hope you enjoy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function killMonster() {
+        const monster = document.getElementById("monster");
+
+        // Change to "death" state
+        monster.src = "img/dead.gif";
+
+        // After 2 seconds, switch to "respawn"
+        setTimeout(() => {
+            monster.src = "img/spawn.gif";
+
+            // After 1 second (respawn animation), switch back to "idle"
+            setTimeout(() => {
+                monster.src = "img/idle.gif";
+            }, 1000);
+
+        }, 2000);
+    }
+  </script>
+  <script>
+      function toggleNavbar() {
+          const navbarMenu = document.getElementById('navbar-menu');
+          navbarMenu.classList.toggle('show');
+      }
+  </script>
+</body>
+</html>

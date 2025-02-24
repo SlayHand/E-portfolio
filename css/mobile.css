@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  #navbar {
+    display: flex;
+    flex-direction: row; /* Ensure logo and toggle are side by side */
+    justify-content: space-between; /* Logo on left, menu on right */
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    height: 70px;
+    width: 100%;
+  }
+
+  #navbar h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 50px; /* Adjust size to fit navbar */
+    width: auto;
+    max-height: 100%;
+  }
+
+  #navbar-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Push to right edge */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+  }
+
+  #navbar ul.show {
+    display: flex;
+  }
+
+  #navbar ul li {
+    width: 100%;
+  }
+
+  #navbar ul li a {
+    font-size: 1.6rem;
+    padding: 1rem;
+    display: block;
+  }
+}
+
+/* Jumbotron (Welcome Section) */
+@media (max-width: 768px) {
+  .jumbotron {
+    width: 90%;
+    max-width: 95%;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+
+  .jumbotron p {
+    font-size: 1.2rem;
+  }
+}
+
+/* About Page Layout */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 250px !important;
+    height: auto;
+  }
+
+  .about-text-container {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .about-text-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-text-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+
+/* Projects Layout */
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .project {
+    height: auto;
+    padding: 30px;
+  }
+}
+
+/* Monster Gif */
+@media (max-width: 768px) {
+  .jumbotron-container {
+    flex-direction: column;
+  }
+
+  .jumbotron-gif img {
+    width: 150px;
+  }
+}
+
+/* Copy Email Section */
+@media (max-width: 768px) {
+  .copy-email-container {
+    height: auto;
+    padding: 50px;
+  }
+
+  .copy-email-btn img {
+    width: 60px;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
