@@ -350,3 +350,30 @@ body.contact-page {
 .linkedin-btn:hover {
   transform: scale(1.1);
 }
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  max-width: 800px; /* Adjust if needed */
+  margin: auto;
+  white-space: nowrap;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  transition: transform 0.1s linear; /* Ensures smooth movement */
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 150px; /* Adjust image size */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
