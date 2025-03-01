@@ -3,6 +3,7 @@ function toggleNavbar() {
     const navbarMenu = document.querySelector('#navbar ul');
     navbarMenu.classList.toggle('show');
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".carousel-track");
 
