@@ -12,6 +12,7 @@
 </head>
 <body class="about-page">
 
+<!-- Navigation Bar -->
 <nav id="navbar">
     <h1>
         <a href="index.html">
@@ -29,35 +30,30 @@
     </ul>
 </nav>
 
-<!-- Jumbotron Container -->
+<!-- Jumbotron Header -->
 <div class="jumbotron-container">
-  <!-- Jumbotron Text -->
   <div class="jumbotron text-center">
-      <!-- Reduced font-size for welcome message -->
-      <h1 style="font-size: 2em;">Welcome to my E-portfolio!</h1>
+      <h1>Welcome to my E-portfolio!</h1>
       <p>Explore my projects, experience, and passion for development.</p>
   </div>
 </div>
 
-<!-- Profile Section -->
-<div class="container">
-  <div class="row profile-container">
-    <!-- Image Column -->
-    <div class="col-sm-6 text-center">
-      <img src="img/fredy.JPG" class="img-circle profile-img" alt="Fredy Image 1" width="300" height="300">
+<!-- About Me Section -->
+<div class="about-container">
+    <!-- Profile Image -->
+    <div class="about-image">
+        <img src="img/fredy.JPG" alt="Fredy-Andri Mõttus">
     </div>
-    
-    <!-- Text Column -->
-    <div class="col-sm-6 profile-text">
-      <div class="about-text-container">
+
+    <!-- About Text -->
+    <div class="about-text">
         <h2>About Me</h2>
-        <p>Hello! My name is Fredy! I enjoy playing games, the guitar, and singing. I'm currently studying at Tartu Vocational College as a junior web developer, and I aspire to be a game developer.</p>
+        <p>Hello! My name is Fredy! I'm currently studying at Tartu Vocational College as a junior web developer, and I aspire to be a game developer. I enjoy playing games, the guitar, and singing.</p>
         <p>From a very early age, I have always felt a very strong pull towards gaming. I've always wanted to make a game myself or work in a team of game developers because, for me, games are one of the highest forms of self-expression and, therefore, art.</p>
-      </div>
     </div>
-  </div>
 </div>
 
+<!-- Skills Carousel -->
 <div class="carousel-container">
   <div class="carousel-track">
       <div class="carousel-slide"><img src="img/css.webp" alt="CSS"></div>
@@ -76,8 +72,6 @@
   </div>
 </div>
 
-
-
 <script>
     function toggleNavbar() {
         const navbarMenu = document.getElementById('navbar-menu');
@@ -87,6 +81,5 @@
 
 <script src="javascripts.js"></script>
 
- 
 </body>
 </html>

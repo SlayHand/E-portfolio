@@ -3,7 +3,6 @@
 /* Global Styles */
 html, body {
   overflow-x: hidden;
-  
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,24 +11,23 @@ html, body {
   background-size: cover;
   color: #fff;
 }
+
 #contact {
   overflow-y: hidden; /* Prevents vertical scrolling */
 }
+
 body {
   padding-top: 80px; /* Push content below navbar */
 }
+
 body.blog-page {
   background: url('../img/blogi.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
 body.contact-page {
-  /* Removed 100vh height and column layout to allow proper centering */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Prevent scrolling */
+  display: block; /* Remove flexbox restrictions */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Navbar */
@@ -96,10 +94,9 @@ body.contact-page {
     display: none !important;
   }
 }
-
 /* About Me Section */
 .about-text-container {
-  background: rgba(0, 0, 0, 0.7); /* Restore dark background */
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -107,9 +104,11 @@ body.contact-page {
   margin: 20px auto;
 }
 
-.about-text-container h2 {
-  font-size: 2.2rem;
+/* Ensure About Me Heading is Centered */
+.about-text h2 {
   text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .about-text-container p {
@@ -117,50 +116,42 @@ body.contact-page {
   line-height: 1.8;
 }
 
-/* Skills Section Styling */
-.skills-container {
-  background: rgba(0, 0, 0, 0.7); /* Same dark background as your about-text-container */
-  color: #fff;
+/* About Section - Properly Align Image & Text */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 80%;
+  margin: 0 auto 50px auto;
+  flex-wrap: wrap;
+}
+
+/* Profile Image - Fixed Size */
+.about-image img {
+  width: 250px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* About Me Text Box */
+.about-text {
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
-  max-width: 90%;
-  margin: 20px auto;
-}
-
-.skills-container h2 {
-  font-size: 2.2rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Flex container for the skills list */
-.skills-list {
-  display: flex;
-  justify-content: space-around;  /* Evenly space items */
-  align-items: center;
-  flex-wrap: wrap; /* In case of very small screens */
-}
-
-/* Each skill item */
-.skill-item p {
-  font-size: 2rem;    /* Increase the font size */
-  font-weight: bold;  /* Make it bold */
-  margin: 0;
-  padding: 10px;      /* Optional: add some padding for spacing */
-}
-
-/* Alternate skill item styling */
-.skills-container .skill-item {
-  font-size: 1.6rem;
-  padding: 10px 0;
-  text-align: center;
+  color: white;
+  flex-grow: 1;
+  text-align: left;
 }
 
 /* Jumbotron */
 .jumbotron {
   background: rgba(0, 0, 0, 0.6) !important;
   color: #fff !important;
-  padding: 30px;
+  padding: 10px;
   border-radius: 10px;
   text-align: center;
   width: 60%;
@@ -172,7 +163,7 @@ body.contact-page {
 .jumbotron h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .jumbotron p {
@@ -183,39 +174,96 @@ body.contact-page {
 /* Jumbotron as a flex container */
 .jumbotron-container {
   display: flex;
-  align-items: center; /* Align text & monster vertically */
-  justify-content: center; /* Center both elements */
-  gap: 10px; /* Reduce space between text & monster */
-  flex-wrap: wrap; /* Allow stacking on smaller screens */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
-/* Ensure the monster stays close to the text */
+/* Doom Monster Fix */
 .jumbotron-gif {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -50px; /* Move the monster closer */
+  margin-top: 20px;
+  width: 100%;
 }
 
-/* Monster size */
+/* Monster Image */
 .jumbotron-gif img {
   width: 250px;
   height: auto;
   cursor: pointer;
 }
 
-/* Responsive fix for mobile */
-@media (max-width: 768px) {
-  .jumbotron-container {
-    flex-direction: column;
+/* Responsive Fix for Desktop */
+@media (min-width: 769px) {
+  .profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
   }
+
+  .profile-img {
+    width: 400px;
+    height: auto;
+  }
+
+  .profile-text {
+    text-align: left;
+    flex-grow: 1;
+  }
+
+  /* Doom Monster Fix */
   .jumbotron-gif {
-    margin-left: 0; /* Reset on small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 
+/* Responsive Fix for Mobile */
+@media (max-width: 768px) {
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 250px !important;
+    height: auto;
+    order: -1;
+  }
+
+  .profile-text {
+    order: 0;
+  }
+
+  /* Move Doom Monster Below Text */
+  .jumbotron-gif {
+    order: 1 !important;
+    margin-top: 20px !important;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Prevent Bootstrap `.col-sm-6` from breaking layout */
+  .col-sm-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+  }
+}
 /* Projects Section */
 .projects-container {
   display: grid;
@@ -258,8 +306,8 @@ body.contact-page {
 }
 
 /* Ensure text is above overlay */
-.project h3, 
-.project p, 
+.project h3,
+.project p,
 .project a {
   color: #fff !important;
   position: relative;
@@ -282,7 +330,6 @@ body.contact-page {
 }
 
 /* Email Copy Button Section */
-/* Gmail Button */
 .copy-email-btn {
   background: none !important;
   border: none !important;
@@ -293,7 +340,6 @@ body.contact-page {
 }
 
 .copy-email-container {
-  /* Updated to remove height and column layout */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -320,6 +366,7 @@ body.contact-page {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* LinkedIn Button */
 .linkedin-btn {
   width: 80px;
   height: auto;
@@ -350,11 +397,22 @@ body.contact-page {
 .linkedin-btn:hover {
   transform: scale(1.1);
 }
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+/* Carousel */
 .carousel-container {
   width: 100%;
   overflow: hidden;
   position: relative;
-  max-width: 800px; /* Adjust if needed */
+  max-width: 800px;
   margin: auto;
   white-space: nowrap;
 }
@@ -364,16 +422,66 @@ body.contact-page {
   gap: 20px;
   width: max-content;
   will-change: transform;
-  transition: transform 0.1s linear; /* Ensures smooth movement */
+  transition: transform 0.1s linear;
 }
 
 .carousel-slide {
   flex: 0 0 auto;
-  width: 150px; /* Adjust image size */
+  width: 150px;
 }
 
 .carousel-slide img {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+/* CV Section */
+.cv-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.cv-image {
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* CV Download Button */
+.cv-download-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 15px 30px;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(45deg, #ff5733, #ff8c00);
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 87, 51, 0.5);
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.cv-download-button:hover {
+  background: linear-gradient(45deg, #ff8c00, #ff5733);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 87, 51, 0.7);
+}
+
+/* Final Mobile Optimization */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+  }
 }

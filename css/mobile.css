@@ -155,3 +155,39 @@
     font-size: 1rem;
   }
 }
+@media (max-width: 768px) {
+  .profile-container {
+      display: flex;
+      flex-direction: column; /* Stack elements in mobile */
+      align-items: center;
+      text-align: center;
+  }
+
+  .profile-img {
+      width: 250px !important;
+      height: auto;
+      order: -1; /* Profile image stays first */
+  }
+
+  .profile-text {
+      order: 0; /* Text stays second */
+  }
+
+  /* Move Doom Monster Below Text on Mobile */
+  .jumbotron-gif {
+      order: 1 !important; /* Force it to be last */
+      margin-top: 20px !important;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+  }
+
+  /* Ensure Bootstrap's col-sm-6 doesn't mess up the layout */
+  .col-sm-6 {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: unset !important;
+  }
+}
+
+
